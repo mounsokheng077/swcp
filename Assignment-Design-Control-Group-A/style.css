@@ -4,10 +4,12 @@
     --primary-color-dark: #0056b3; /* A darker shade of the primary color, often for hover states. */
     --light-grey: #f8f9fa; /* A very light grey, used for backgrounds. */
     --medium-grey: #dee2e6; /* A medium grey, used for borders and dividers. */
+    --medium-grey-dark: #c8d0d8; /* A darker shade of medium grey for hover states. */
     --dark-grey: #495057; /* A dark grey, used for secondary text or elements. */
     --text-color: #212529; /* The primary color for body text. */
     --success-color: #28a745; /* Color for success messages or elements. */
     --danger-color: #dc3545; /* Color for error messages or destructive actions. */
+    --placeholder-color: #aab2bd; /* Color for input placeholder text. */
     --border-radius: 8px; /* The standard radius for rounded corners. */
     --shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* A standard shadow effect for cards and pop-ups. */
     --transition-speed: 0.3s; /* The standard duration for animations and transitions. */
@@ -87,7 +89,7 @@ textarea {
 input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 textarea::placeholder {
-    color: #aab2bd;
+    color: var(--placeholder-color);
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -173,24 +175,6 @@ input[type="submit"]:hover {
     background-color: var(--primary-color-dark);
     transform: translateY(-2px);
 }
-/* Container for the form's action buttons (Submit, Reset). */
-.form-buttons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-    border-top: 1px solid var(--medium-grey);
-    padding-top: 1.5rem;
-}
-/* Specific styles for the primary action button (Submit). */
-input[type="submit"] {
-    background-color: var(--primary-color);
-    color: white;
-}
-/* Hover effect for the submit button. */
-input[type="submit"]:hover {
-    background-color: var(--primary-color-dark);
-    transform: translateY(-2px);
-}
 /* Specific styles for the secondary action button (Reset). */
 input[type="reset"] {
     background-color: var(--medium-grey);
@@ -198,6 +182,6 @@ input[type="reset"] {
 }
 /* Hover effect for the reset button. */
 input[type="reset"]:hover {
-    background-color: #c8d0d8; /* Slightly darkens the reset button on hover. */
+    background-color: var(--medium-grey-dark); /* Slightly darkens the reset button on hover. */
     transform: translateY(-2px);
 }

@@ -1,0 +1,203 @@
+/*////////////////////////////////////////// Defines all reusable values */
+:root {
+    --primary-color: #007bff; /* Defines the main brand color. */
+    --primary-color-dark: #0056b3; /* A darker shade of the primary color, often for hover states. */
+    --light-grey: #f8f9fa; /* A very light grey, used for backgrounds. */
+    --medium-grey: #dee2e6; /* A medium grey, used for borders and dividers. */
+    --dark-grey: #495057; /* A dark grey, used for secondary text or elements. */
+    --text-color: #212529; /* The primary color for body text. */
+    --success-color: #28a745; /* Color for success messages or elements. */
+    --danger-color: #dc3545; /* Color for error messages or destructive actions. */
+    --border-radius: 8px; /* The standard radius for rounded corners. */
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* A standard shadow effect for cards and pop-ups. */
+    --transition-speed: 0.3s; /* The standard duration for animations and transitions. */
+}
+
+/*////////////////////////////////////////// A universal reset for predictable layouts */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*////////////////////////////////////////// Body and Page Layout */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--light-grey); /* Use our variable! */
+    color: var(--text-color); /* Use our variable! */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0; /* Remove default browser margin */
+    padding: 20px;
+}
+
+/*////////////////////////////////////////// Form Layout */
+form {
+    width: 100%;
+    max-width: 650px;
+    background: #ffffff;
+    padding: 2em;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+/*////////////////////////////////////////// Fieldset, Legend, and Groups */
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+legend {
+    font-size: 1.8em; /* Sets the font size for the form's main title. */
+    font-weight: 600; /* Makes the font semi-bold. */
+    color: var(--text-color); /* Sets the color of the legend text. */
+    margin-bottom: 1.5em; /* Adds space below the legend. */
+    width: 100%; /* Ensures the legend and its border span the full width of the form. */
+    padding-bottom: 0.5em; /* Adds space between the legend text and its bottom border. */
+    border-bottom: 1px solid var(--medium-grey);
+}
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.form-group label {
+    margin-bottom: 0.5rem; /* Adds a small space between the label and its input field. */
+    font-weight: 500; /* Makes the label text slightly bolder than normal text. */
+    font-size: 0.95em; /* Sets a slightly smaller font size for the label. */
+}
+
+/*////////////////////////////////////////// Common Inputs */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--medium-grey);
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    color: var(--text-color); /* Sets the color of the user-entered text. */
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+/*////////////////////////////////////////// Interactivity and Feedback */
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+    color: #aab2bd;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+textarea {
+    resize: vertical; /* Allows the user to resize the textarea vertically. */
+    min-height: 140px;
+}
+
+/*////////////////////////////////////////// Unique Inputs */
+.radio-group, .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+}
+.radio-group label, .checkbox-group label {
+    /* Aligns the text label with the radio/checkbox input. */
+    display: flex; /* Enables flexbox to easily align the input and text. */
+    align-items: center; /* Vertically aligns the input and the text next to it. */
+    cursor: pointer; /* Changes the mouse cursor to a hand pointer on hover. */
+    font-weight: 400; /* Sets the font weight to normal. */
+    margin-bottom: 0; /* Resets the bottom margin from the .form-group label style. */
+}
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 0.6em; /* Adds space between the checkbox/radio and its text label. */
+    transform: scale(1.2); /* Makes the checkbox/radio slightly larger than the default. */
+    accent-color: var(--primary-color); /* Styles the color of the checkmark or radio dot. */
+    transition: transform var(--transition-speed) ease;
+}
+input[type="radio"]:hover,
+input[type="checkbox"]:hover {
+    transform: scale(1.3);
+}
+input[type="file"] {
+    border: 1px solid var(--medium-grey); /* Adds a border around the file input control. */
+    border-radius: var(--border-radius); /* Rounds the corners of the file input. */
+    padding: 8px; /* Adds some internal spacing. */
+    font-size: 0.9em; /* Sets the font size for the "No file chosen" text. */
+}
+input[type="file"]::file-selector-button {
+    border: none;
+    background: var(--primary-color);
+    padding: 8px 12px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease;
+}
+input[type="file"]::file-selector-button:hover {
+    background: var(--primary-color-dark);
+}
+
+/*////////////////////////////////////////// Action Buttons */
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--medium-grey);
+    padding-top: 1.5rem;
+}
+input[type="submit"],
+input[type="reset"] {
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+    flex-grow: 1;
+}
+input[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+}
+input[type="submit"]:hover {
+    background-color: var(--primary-color-dark);
+    transform: translateY(-2px);
+}
+/* Container for the form's action buttons (Submit, Reset). */
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--medium-grey);
+    padding-top: 1.5rem;
+}
+/* Specific styles for the primary action button (Submit). */
+input[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+}
+/* Hover effect for the submit button. */
+input[type="submit"]:hover {
+    background-color: var(--primary-color-dark);
+    transform: translateY(-2px);
+}
+/* Specific styles for the secondary action button (Reset). */
+input[type="reset"] {
+    background-color: var(--medium-grey);
+    color: var(--dark-grey);
+}
+/* Hover effect for the reset button. */
+input[type="reset"]:hover {
+    background-color: #c8d0d8; /* Slightly darkens the reset button on hover. */
+    transform: translateY(-2px);
+}

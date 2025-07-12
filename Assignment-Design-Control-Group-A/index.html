@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Application form</legend>
+
+    <!--////////////////////////////////////////// Name Input Field -->
+    <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
+    </div>
+
+    <!--////////////////////////////////////////// Email Input Field -->
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address">
+    </div> 
+
+    <!--////////////////////////////////////////// Gender Selection -->
+    <div class="form-group">
+        <label>Gender</label>
+        <div class="radio-group">
+            <label for="male"><input type="radio" id="male" name="gender" value="male">Male</label>
+            <label for="female"><input type="radio" id="female" name="gender" value="female">Female</label>
+        </div>
+    </div>
+
+    <!--////////////////////////////////////////// Nationality Selection -->
+    <div class="form-group">
+        <label for="nationality">Nationality</label>
+        <select id="nationality" name="nationality">
+            <option value="" disabled selected>Select your nationality</option>
+            <option value="Cambodia">Cambodia</option>
+            <option value="Japan">Japan</option>
+            <option value="England">England</option>
+            <option value="USA">USA</option>
+        </select>
+    </div>
+
+    <!--////////////////////////////////////////// Skills Selection -->
+            <div class="form-group">
+                <label>Skills</label>
+                <div class="checkbox-group">
+                    <label for="aspnet"><input type="checkbox" id="aspnet" name="skills" value="Asp.Net"> Asp.Net</label>
+                    <label for="jquery"><input type="checkbox" id="jquery" name="skills" value="jQuery"> jQuery</label>
+                    <label for="mvc"><input type="checkbox" id="mvc" name="skills" value="MVC"> MVC</label>
+                    <label for="sql"><input type="checkbox" id="sql" name="skills" value="Sql Server"> Sql Server</label>
+                </div>
+            </div>
+
+    <!--////////////////////////////////////////// Post Applying For -->
+    <div class="form-group">
+                <label>Post applying for</label>
+                <div class="radio-group">
+                    <label for="trainee"><input type="radio" id="trainee" name="position" value="trainee"> Trainee</label>
+                    <label for="software_engineer"><input type="radio" id="software_engineer" name="position" value="software_engineer"> Software Engineer</label>
+                    <label for="team_leader"><input type="radio" id="team_leader" name="position" value="team_leader"> Team Leader</label>
+                    <label for="project_manager"><input type="radio" id="project_manager" name="position" value="project_manager"> Project Manager</label>
+                </div>
+            </div>
+
+    <!--////////////////////////////////////////// Upload Resume -->
+    <div class="form-group">
+        <label for="resume">Upload Resume</label>
+        <input type="file" id="resume" name="resume">
+    </div>
+
+    <!--////////////////////////////////////////// Paste Your Resume -->
+    <div class="form-group">
+        <label for="resume_text">Paste Your Resume</label>
+        <textarea id="resume_text" name="resume_text" rows="5" placeholder="Paste your resume here..."></textarea>
+    </div>
+
+    <!--////////////////////////////////////////// Agreement Checkbox -->
+    <div class="form-group checkbox-group">
+        <label for="notify"><input type="checkbox" id="notify" name="notify"> Notify me the status via Email</label>
+        <label for="agree"><input type="checkbox" id="agree" name="agree"> I agree to the terms and conditions</label>
+
+    <!--////////////////////////////////////////// Submit Button -->
+     <div class="form-buttons">
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+     </div>
+    </div>
+        </fieldset>
+    </form>
+</body>
+<!--////////////////////////////////////////// Member:
+Group: 4 - ASJ2
+1.ថី ហេងលី 
+2.ពិត​ ម៉េងហ៊ាង 
+3.ខឹម សែមចំរើន 
+4.នី បញ្ញារិទ្ធ​ 
+5.អឿន លីលី 
+6.យូ ចាន់មករា 
+-->
+</html>

@@ -1,0 +1,217 @@
+/*Global Styles & Variables*/
+/* :root selector targets the root element of the document (<html>) to define global CSS variables. */
+:root {
+    --primary-color: #007bff; /* Defines the main brand color. */
+    --primary-color-dark: #0056b3; /* A darker shade of the primary color, often for hover states. */
+    --light-grey: #f8f9fa; /* A very light grey, used for backgrounds. */
+    --medium-grey: #dee2e6; /* A medium grey, used for borders and dividers. */
+    --dark-grey: #495057; /* A dark grey, used for secondary text or elements. */
+    --text-color: #212529; /* The primary color for body text. */
+    --success-color: #28a745; /* Color for success messages or elements. */
+    --danger-color: #dc3545; /* Color for error messages or destructive actions. */
+    --border-radius: 8px; /* The standard radius for rounded corners. */
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* A standard shadow effect for cards and pop-ups. */
+    --transition-speed: 0.3s; /* The standard duration for animations and transitions. */
+}
+
+/* Universal selector (*) applies styles to all elements. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height. */
+}
+
+/* Body styles set the base for the entire page. */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Sets a modern, system-based font stack for broad compatibility. */
+    background-color: var(--light-grey); /* Sets the background color for the entire page. */
+    color: var(--text-color); /* Sets the default text color for the page. */
+    display: flex; /* Enables Flexbox layout, allowing for easy alignment of child elements. */
+    justify-content: center; /* Horizontally centers the flex items (the form, in this case). */
+    align-items: center; /* Vertically centers the flex items. */
+    min-height: 100vh; /* Ensures the body takes up at least the full height of the viewport. */
+    margin: 0; /* Removes the default margin set by the browser. */
+    padding: 20px; /* Adds some space around the content, especially on smaller screens. */
+}
+
+/* Styles for the main form container. */
+form {
+    width: 100%; /* Makes the form take the full width of its parent container. */
+    max-width: 650px; /* Restricts the form from becoming too wide on large screens. */
+    background: #ffffff; /* Sets a solid white background for the form. */
+    padding: 2em; /* Adds internal spacing within the form. */
+    border-radius: var(--border-radius); /* Applies rounded corners to the form. */
+    box-shadow: var(--shadow); /* Adds a subtle shadow to lift the form off the page. */
+}
+
+/* Fieldset is used to group related elements in a form. */
+fieldset {
+    border: none; /* Removes the default browser border. */
+    padding: 0;
+    margin: 0;
+}
+
+/* Legend provides a caption for the fieldset. */
+legend {
+    font-size: 1.8em; /* Sets the font size for the form's main title. */
+    font-weight: 600; /* Makes the font semi-bold. */
+    color: var(--text-color); /* Sets the color of the legend text. */
+    margin-bottom: 1.5em; /* Adds space below the legend. */
+    width: 100%; /* Ensures the legend and its border span the full width of the form. */
+    padding-bottom: 0.5em; /* Adds space between the legend text and its bottom border. */
+    border-bottom: 1px solid var(--medium-grey); /* Adds a horizontal line below the legend to act as a separator. */
+}
+
+/* A container for a label and its corresponding input control. */
+.form-group {
+    margin-bottom: 1.5rem; /* Adds vertical space between each form group. */
+    display: flex; /* Enables flexbox for this container. */
+    flex-direction: column; /* Stacks the child elements (label and input) vertically. */
+}
+
+/* Styles for the labels of form inputs. */
+.form-group label {
+    margin-bottom: 0.5rem; /* Adds a small space between the label and its input field. */
+    font-weight: 500; /* Makes the label text slightly bolder than normal text. */
+    font-size: 0.95em; /* Sets a slightly smaller font size for the label. */
+}
+
+/* Shared styles for text inputs, email inputs, select dropdowns, and textareas. */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%; /* Makes the input field span the full width of its container. */
+    padding: 12px 15px; /* Adds internal spacing (padding) inside the input field. */
+    border: 1px solid var(--medium-grey); /* Defines the border style and color. */
+    border-radius: var(--border-radius); /* Applies rounded corners to the input field. */
+    font-size: 1em; /* Sets the font size of the text inside the input. */
+    color: var(--text-color); /* Sets the color of the user-entered text. */
+    background-color: #fff; /* Sets the background color of the input field. */
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease; /* Creates a smooth animation for border and shadow changes. */
+}
+
+/* Styles for the placeholder text within inputs. */
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+    color: #aab2bd;
+}
+
+/* Styles for inputs when they are in focus (clicked or tabbed into). */
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+    outline: none; /* Removes the default browser outline that appears on focus. */
+    border-color: var(--primary-color); /* Changes the border color to the primary color when the input is active. */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Adds a blue "glow" effect to indicate focus. */
+}
+
+/* Specific styles for the textarea element. */
+textarea {
+    resize: vertical; /* Allows the user to resize the textarea vertically. */
+    min-height: 140px;
+}
+
+/* Flex container for radio buttons and checkboxes to align them in a row. */
+.radio-group, .checkbox-group {
+    display: flex; /* Arranges the labels and inputs in a row. */
+    flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens. */
+    gap: 1rem 2rem; /* Adds space between items (1rem vertical, 2rem horizontal). */
+}
+
+.radio-group label, .checkbox-group label {
+    /* Aligns the text label with the radio/checkbox input. */
+    display: flex; /* Enables flexbox to easily align the input and text. */
+    align-items: center; /* Vertically aligns the input and the text next to it. */
+    cursor: pointer; /* Changes the mouse cursor to a hand pointer on hover. */
+    font-weight: 400; /* Sets the font weight to normal. */
+    margin-bottom: 0; /* Resets the bottom margin from the .form-group label style. */
+}
+
+/* Styles for the radio and checkbox inputs themselves. */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 0.6em; /* Adds space between the checkbox/radio and its text label. */
+    transform: scale(1.2); /* Makes the checkbox/radio slightly larger than the default. */
+    accent-color: var(--primary-color); /* Styles the color of the checkmark or radio dot. */
+    transition: transform var(--transition-speed) ease; /* Adds a smooth animation for the hover effect. */
+}
+
+/* Hover effect for radio and checkbox inputs to provide visual feedback. */
+input[type="radio"]:hover,
+input[type="checkbox"]:hover {
+    transform: scale(1.3);
+}
+
+/* Styles for the file input element. */
+input[type="file"] {
+    border: 1px solid var(--medium-grey); /* Adds a border around the file input control. */
+    border-radius: var(--border-radius); /* Rounds the corners of the file input. */
+    padding: 8px; /* Adds some internal spacing. */
+    font-size: 0.9em; /* Sets the font size for the "No file chosen" text. */
+}
+
+/* Styles the "Choose File" button within the file input. */
+input[type="file"]::file-selector-button {
+    margin-right: 10px; /* Adds space between the button and the file name text. */
+    border: none; /* Removes the default border from the button. */
+    background: var(--primary-color); /* Sets the background color of the button. */
+    padding: 8px 12px; /* Adds internal spacing to the button. */
+    border-radius: 5px; /* Rounds the corners of the button. */
+    color: #fff; /* Sets the button's text color to white. */
+    cursor: pointer; /* Changes the mouse cursor to a hand pointer. */
+    transition: background-color var(--transition-speed) ease; /* Adds a smooth transition for the hover effect. */
+}
+
+/* Hover effect for the file selector button. */
+input[type="file"]::file-selector-button:hover {
+    background: var(--primary-color-dark); /* Darkens the button's background on hover. */
+}
+
+/* Container for the form's action buttons (Submit, Reset). */
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--medium-grey);
+    padding-top: 1.5rem;
+}
+
+/* Shared styles for the submit and reset buttons. */
+input[type="submit"],
+input[type="reset"] {
+    padding: 12px 25px; /* Adds internal spacing to the buttons. */
+    font-size: 1em; /* Sets the font size for the button text. */
+    font-weight: 600; /* Makes the button text semi-bold. */
+    border: none; /* Removes the default button border. */
+    border-radius: var(--border-radius); /* Applies rounded corners to the buttons. */
+    cursor: pointer; /* Changes the mouse cursor to a hand pointer. */
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease; /* Animates background and position changes. */
+    flex-grow: 1; /* Allows buttons to grow and fill the available space in the flex container. */
+}
+
+/* Specific styles for the primary action button (Submit). */
+input[type="submit"] {
+    background-color: var(--primary-color); /* Sets the background color for the submit button. */
+    color: white; /* Sets the text color to white. */
+}
+
+/* Hover effect for the submit button. */
+input[type="submit"]:hover {
+    background-color: var(--primary-color-dark); /* Darkens the background on hover for visual feedback. */
+    transform: translateY(-2px); /* Lifts the button slightly on hover for a 3D effect. */
+}
+
+/* Specific styles for the secondary action button (Reset). */
+input[type="reset"] {
+    background-color: var(--medium-grey); /* Sets a neutral background color for the reset button. */
+    color: var(--dark-grey); /* Sets a darker text color for contrast. */
+}
+
+/* Hover effect for the reset button. */
+input[type="reset"]:hover {
+    background-color: #c8d0d8; /* Slightly darkens the reset button on hover. */
+    transform: translateY(-2px); /* Lifts the button slightly on hover. */
+}

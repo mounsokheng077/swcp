@@ -1,0 +1,44 @@
+
+{
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: "Moul";
+    src: url("font/KhmerOSMoul.ttf");
+}
+
+@font-face {
+    font-family: "Siemreap";
+    src: url("font/KhmerOSsiemreap.ttf");
+}
+
+@font-face {
+    font-family: "Lobster";
+    src: url("font/Lobster-Regular.ttf");
+}
+@font-face {
+    font-family: "DancingScript";
+    src: url("font/DancingScript-VariableFont_wght.ttf");
+}
+
+h1 {
+    font-size: 45px;
+    color: green;
+    font-family: "Moul";
+}
+
+p {
+    font-family: "Siemreap";
+    font-size: 25px;
+}
+
+h2 {
+    font-family: 'Lobster';
+    font-size: 40px;
+    color: darkblue;
+}
+.code-by {
+    font-family: "DancingScript";
+}

@@ -1,0 +1,48 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Ubuntu-Regular';
+    src: url('fonts/Ubuntu-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+.background-container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('images/AC.jpg'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.content {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+}
+
+h1 {
+    font-family: Ubuntu-Regular;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-family: Ubuntu-Regular;
+    font-size: 20px;
+    line-height: 1.6;
+}

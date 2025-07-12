@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ny Panharith Student Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <h1>STUDENT INFORMATION FORM</h1>
+    <form>
+
+        <fieldset>
+            <legend>Student Details</legend>
+            <div>
+                <label for="username">Enter Username:</label>
+                <input type="text" id="username" name="username" placeholder="please input your name" required>
+            </div>
+
+            <div>
+                <label for="password">Enter Password:</label>
+                <input type="password" id="password" name="password" placeholder="please input your password" required>
+            </div>
+
+            <div>
+                <label for="email">Enter Email:</label>
+                <input type="email" id="email" name="email" placeholder="please input your email" required>
+            </div>
+
+            <div>
+                <label for="age">Enter Age:</label>
+                <input type="number" id="age" name="age" placeholder="please input your age" required>
+            </div>
+        </fieldset>
+
+        <button type="submit" id="login-button">Log In</button>
+        <button type="reset" class="clear-button" id="clear-button">Clear</button>
+    </form>
+</body>
+</html>

@@ -52,7 +52,7 @@ fieldset {
     margin: 0;
 }
 legend {
-    font-size: 1.8em; /* Sets the font size for the form's main title. */
+    font-size: 1.8em; /* for the form's main title. */
     font-weight: 600; /* Makes the font semi-bold. */
     color: var(--text-color); /* Sets the color of the legend text. */
     margin-bottom: 1.5em; /* Adds space below the legend. */
@@ -152,7 +152,7 @@ input[type="file"]::file-selector-button:hover {
 .form-buttons {
     display: flex;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     border-top: 1px solid var(--medium-grey);
     padding-top: 1.5rem;
 }
@@ -175,13 +175,11 @@ input[type="submit"]:hover {
     background-color: var(--primary-color-dark);
     transform: translateY(-2px);
 }
-/* Specific styles for the secondary action button (Reset). */
 input[type="reset"] {
     background-color: var(--medium-grey);
     color: var(--dark-grey);
 }
-/* Hover effect for the reset button. */
 input[type="reset"]:hover {
-    background-color: var(--medium-grey-dark); /* Slightly darkens the reset button on hover. */
+    background-color: var(--medium-grey-dark);
     transform: translateY(-2px);
 }
